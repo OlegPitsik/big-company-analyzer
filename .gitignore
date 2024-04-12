@@ -1,3 +1,26 @@
+target/
+/target/**
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+## generated
+src/main/generated/*
+src/integration-test/generated_tests/*
+
+src/main/resources/application-compose.yml
+src/*/resources/application-int-test.yml
+
+### IntelliJ IDEA ###
+.idea
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
 # Compiled class file
 *.class
 
