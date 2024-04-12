@@ -6,7 +6,15 @@ import com.swissre.bigcompanyanalyzer.entity.Report;
 import java.util.Map;
 
 public interface ReportGenerationService {
-    Report generateReport(Map<Long, Employee> idsToEmployees);
+    /**
+     * Generate report based on Company employees structure
+     * <p>
+     * Improvements: Better to introduce new type for incoming param, to specify that the data must be structured,
+     * because now there is no way to check that all employees are really linked to managers
+     *
+     * @param linkedManagersToSubordinatesStructure Company employees structure
+     */
+    Report generateReport(Map<Long, Employee> linkedManagersToSubordinatesStructure);
 
     default Employee findCEO(Map<Long, Employee> idsToEmployees) {
         Employee ceo = null;

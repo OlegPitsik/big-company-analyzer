@@ -26,10 +26,13 @@ public class FileParser {
 
     /**
      * Parse file and return employee structure as a Map of ids and Employees.
+     * <p>
+     * Improvements: return new object ParsingResult with map and errors, put in error all invalid rows
+     * (with incorrect format, or without ids)
+     * Then it is possible to add all errors to the report.
      *
      * @param path Path to the file
      */
-
     public Map<Long, Employee> parse(Path path) throws IOException {
         if (!Files.exists(path)) {
             throw new FileException("File %s does not exist".formatted(path.toString()));

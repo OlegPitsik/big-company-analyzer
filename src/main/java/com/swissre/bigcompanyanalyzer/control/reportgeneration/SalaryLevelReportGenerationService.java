@@ -22,10 +22,10 @@ public class SalaryLevelReportGenerationService implements ReportGenerationServi
     }
 
     @Override
-    public Report generateReport(Map<Long, Employee> idsToEmployees) {
+    public Report generateReport(Map<Long, Employee> linkedManagersToSubordinatesStructure) {
         var report = new Report(Report.ReportType.SALARY_LEVEL_REPORT);
 
-        var employees = List.of(this.findCEO(idsToEmployees));
+        var employees = List.of(this.findCEO(linkedManagersToSubordinatesStructure));
         while (!employees.isEmpty()) {
             employees.forEach(employee ->
                     getRelativeToSubordinatesSalaryPercent(employee, report)

@@ -21,6 +21,10 @@ import java.util.List;
  * MIN_ALLOWED_SALARY_PERCENT - minimal level of managers salary in percents from average salary of their subordinates
  * MAX_ALLOWED_SALARY_PERCENT - maximum level of managers salary in percents from average salary of their subordinates
  * <p>
+ * Improvements:
+ * Introduce separate property file for configs, move object creation to an ObjectFactory, that can create Analizer with all
+ * dependencies for file processing, potentially another type of processing can be added.
+ * <p>
  * Author: Oleg Pitsik
  */
 

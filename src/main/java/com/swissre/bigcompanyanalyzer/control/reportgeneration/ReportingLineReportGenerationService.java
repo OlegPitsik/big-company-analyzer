@@ -14,10 +14,10 @@ public class ReportingLineReportGenerationService implements ReportGenerationSer
     }
 
     @Override
-    public Report generateReport(Map<Long, Employee> idsToEmployees) {
-        var ceo = this.findCEO(idsToEmployees);
+    public Report generateReport(Map<Long, Employee> linkedManagersToSubordinatesStructure) {
         var report = new Report(Report.ReportType.REPORTING_LINE_REPORT);
 
+        var ceo = this.findCEO(linkedManagersToSubordinatesStructure);
         var subordinates = this.getSubordinatesFrom(List.of(ceo));
         var reportingLineLevel = 1;
 
